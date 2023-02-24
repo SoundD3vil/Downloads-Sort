@@ -30,4 +30,5 @@ The script currently supports the following file extensions:
 
 License
 
-This script is licensed under the MIT license. You are free to use, modify, and distribute it as long as you maintain the original license and give credit to the authors. For more information, see the "LICENSE" file.
+This script is licensed under the MIT license. 
+You are free to use, modify, and distribute it as long as you maintain the original license and give credit to the authors. 
