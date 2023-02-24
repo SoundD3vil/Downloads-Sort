@@ -9,7 +9,7 @@ Installation
     Download the script from the repository and save it to your downloads folder.
     Open the PowerShell app by opening the Windows search box and typing "PowerShell". Click on the "Windows PowerShell" app.
     In the PowerShell app, navigate to your downloads folder by running the following command: cd $env:userprofile\Downloads.
-    Enter the following command to run the script: .\sort_downloads.ps1
+    Enter the following command to run the script: .\Sort-Downloads.ps1
     Press the "Enter" key to run the script.
 
 Customization
