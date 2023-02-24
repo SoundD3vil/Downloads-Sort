@@ -1,25 +1,25 @@
-#Dieses Skript definiert zuerst die Ordnerpfade für jede Kategorie und erstellt sie, wenn sie nicht vorhanden sind. 
-#Dann wird der Download-Ordner nach Dateien durchsucht und jede Datei basierend auf ihrer Dateierweiterung in den entsprechenden Ordner verschoben. 
-#Wenn die Dateierweiterung nicht in eine der Kategorien passt, wird die Datei in den Ordner "Sonstiges" verschoben. 
-#Die Ausgabe "Sortierung abgeschlossen!" wird angezeigt, wenn das Skript abgeschlossen ist.
+#This script first defines the folder paths for each category and creates them if they do not exist. 
+#Then it scans the download folder for files and moves each file to the appropriate folder based on its file extension. 
+#If the file extension doesn't fit into one of the categories, the file is moved to the "Other" folder. 
+#The "Sorting complete!" output is displayed when the script is complete.
 
 #Created with ChatGPT by SoundDevil
 
-# Definiere die Ordnerpfade für jede Kategorie
+# Define the folder paths for each category is closed.
 $bild_ordner = "$env:userprofile\Downloads\Bilder"
 $musik_ordner = "$env:userprofile\Downloads\Musik"
 $video_ordner = "$env:userprofile\Downloads\Videos"
 $pdf_ordner = "$env:userprofile\Downloads\PDF"
 $sonstiges_ordner = "$env:userprofile\Downloads\Sonstiges"
 
-# Erstelle die Ordner, wenn sie nicht bereits vorhanden sind
+# Create the folders if they do not already exist
 if (!(Test-Path $bild_ordner)) {New-Item -ItemType Directory -Force -Path $bild_ordner}
 if (!(Test-Path $musik_ordner)) {New-Item -ItemType Directory -Force -Path $musik_ordner}
 if (!(Test-Path $video_ordner)) {New-Item -ItemType Directory -Force -Path $video_ordner}
 if (!(Test-Path $pdf_ordner)) {New-Item -ItemType Directory -Force -Path $pdf_ordner}
 if (!(Test-Path $sonstiges_ordner)) {New-Item -ItemType Directory -Force -Path $sonstiges_ordner}
 
-# Durchsuche den Download-Ordner und sortiere die Dateien entsprechend
+# Browse the download folder and sort the files accordingly
 Get-ChildItem "$env:userprofile\Downloads\*" -File | ForEach-Object {
     $extension = $_.Extension.ToLower()
 
@@ -40,4 +40,4 @@ Get-ChildItem "$env:userprofile\Downloads\*" -File | ForEach-Object {
     }
 }
 
-Write-Host "Sortierung abgeschlossen!"
+Write-Host "Sorting completed!"
